@@ -7,3 +7,9 @@ Execute:
 include("src/decompress.jl")
 ```
 to decompress the example file.
+
+Execute:
+```julia
+include("src/compress.jl")
+```
+to compress the example file.
