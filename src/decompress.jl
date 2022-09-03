@@ -1,5 +1,7 @@
 using CodecXz
 
+const filename="data/log_8700W_8ms.csv"
+
 function decompress(input, output)
     stream = open(input)
     output = open(output,"w")
@@ -7,3 +9,7 @@ function decompress(input, output)
     close(stream)
     close(output)
 end
+
+input = filename * ".xz"
+output = filename
+decompress(input, output)
