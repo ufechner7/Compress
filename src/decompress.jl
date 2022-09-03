@@ -1,6 +1,6 @@
 using CodecXz
 
-const filename="data/log_8700W_8ms.csv"
+const filename=joinpath("data", "log_8700W_8ms.csv")
 
 function decompress(input, output)
     stream = open(input)
