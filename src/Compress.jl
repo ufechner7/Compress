@@ -1,5 +1,7 @@
 module Compress
 
+using CodecXz
+
 export compress, decompress
 
 function compress(input, output)

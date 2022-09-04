@@ -1,2 +1,8 @@
+name = "Compress"
+uuid = "49e6aff5-a6a2-448a-a710-c9c98504fa1d"
+authors = ["Uwe Fechner <fechner@aenarete.eu>"]
+version = "0.1.0"
+
 [deps]
 CodecXz = "ba30903b-d9e8-5048-a5ec-d1f5b0d4b47b"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
