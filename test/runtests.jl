@@ -2,20 +2,19 @@ using Test, Compress
 
 cd("..")
 
-# TODO: use mktempdir to create output folder
-
-const filename=joinpath("data", "log_8700W_8ms.csv")
+const filename="log_8700W_8ms.csv"
+outdir = mktempdir()
 
 @testset "decompress:" begin
-    input = filename * ".xz"
-    output = filename
+    input = joinpath("data", filename) * ".xz"
+    output = joinpath(outdir, filename)
     bytes = decompress(input, output)
     @test bytes == 12758112
 end
 
 @testset "compress:" begin
-    input = filename
-    output = filename * ".xz"
+    input = joinpath(outdir, filename)
+    output = joinpath(outdir, filename) * ".xz"
     bytes = compress(input, output)
     @test bytes == 3618752
 end
