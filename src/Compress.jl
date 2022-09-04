@@ -4,7 +4,8 @@ using CodecXz
 
 export compress, decompress
 
-function compress(input, output)
+function compress(input, output; force=true)
+    if ! force && isfile(output); return; end
     open(input) do inp
         open(output,"w") do out
             write(out, read(XzCompressorStream(inp)))
@@ -12,7 +13,8 @@ function compress(input, output)
     end
 end
 
-function decompress(input, output)
+function decompress(input, output; force=true)
+    if ! force && isfile(output); return; end
     open(input) do inp
         open(output,"w") do out
             write(out, read(XzDecompressorStream(inp)))
