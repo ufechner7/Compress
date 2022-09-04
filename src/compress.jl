@@ -8,10 +8,10 @@ function compress(input, output)
             write(out, read(XzCompressorStream(inp)))
         end
     end
+    nothing
 end
 
 input = filename 
 output = filename * ".xz"
 rm(output, force=true)
 compress(input, output)
-nothing
